@@ -1,22 +1,56 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import LocationList from '../../components/LocationDetail/LocationDetail';
-import Loading from '../../components/Loading';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './module.home.style.css'
+import LocationDetail from '../../components/LocationDetail/LocationDetail';
+import CurrentWeather from '../DetailCurrent/components/CurrentWeather';
+import Forecast from '../DetailCurrent/components/Forecast';
+import FileLoading from '../../components/Loading';
+import { getCurrentLocationWeather } from '../../redux/actions';
+
 export default function Home() {
     const { loading, error, data } = useSelector((state) => state.currentLocationWeatherReducer);
+    const [location, setLocation] = useState('');
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (loading) {
+            return <FileLoading />
+        }
+    }, [loading])
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        dispatch(getCurrentLocationWeather(location))
+    };
 
     return (
-        <div className='home h-screen'>
-            <div className='m-auto md:w-6/12'>
-                <SearchBar />
-                {loading && <Loading />}
-                {error && <p className="text-red-500">{error}</p>}
+        <div className='home  h-full min-h-screen'>
+            <div className='md:w-6/12 m-auto p-5 rounded'>
+
+                <form onSubmit={handleSearch} className='flex m-auto gap-3 justify-center search-container'>
+                    <input required className='search-input w-full' type="text" value={location} onChange={(e) => setLocation(e.target.value)} />
+                    <button type='submit' className='search-btn'><img alt='search' src='/images/location.png' /></button>
+                </form>
+
                 {data ? (
-                    <LocationList locationDetail={data} />
+                    <div>
+
+                        {data.detail ?
+                            <>
+                                <LocationDetail location={data.detail.location} />
+                                <CurrentWeather current={data.detail.current} />
+                                <Forecast forecast={data.forecast.forecast} />
+                            </>
+                            :
+                            <FileLoading />
+                        }
+                    </div>
                 ) : (
-                    <h1 className="text-center">Please input the city name</h1>
+                    <h1 className="text-center">
+                        {error && <p className="text-red-500">{error}</p>}
+                        Please input the city name
+                    </h1>
                 )}
             </div>
         </div>

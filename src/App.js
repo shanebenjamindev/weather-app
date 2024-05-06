@@ -4,12 +4,12 @@ import './App.css';
 import { BrowserRouter, Routes } from 'react-router-dom'
 import renderRoutes from './routes';
 import { Suspense } from 'react';
-import Loading from './components/Loading'
+import FileLoading from './components/Loading';
 
 
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<FileLoading />}>
       <BrowserRouter>
         <Routes>
           {renderRoutes()}

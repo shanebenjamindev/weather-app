@@ -26,8 +26,6 @@ const currentLocationWeatherReducer = (state = initialState, action) => {
             state.error = action.payload;
             return { ...state }
 
-       
-
         default:
             return state;
     }

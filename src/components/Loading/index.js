@@ -1,7 +1,7 @@
 import React from 'react'
 import './loading.css'
 
-export default function Loading() {
+export default function FileLoading() {
   const style = {
     position: "fixed",
     top: 0,
