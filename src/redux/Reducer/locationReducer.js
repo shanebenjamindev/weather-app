@@ -3,28 +3,28 @@ import * as actions from '../types'
 
 const initialState = {
     loading: false,
-    data: "",
+    listLocation: "",
     error: null,
 };
 
-const weatherForecast = (state = initialState, action) => {
+const locationReducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case actions.GET_WEATHER_FORECAST_REQUEST:
+        case actions.GET_LOCATION_REQUEST:
             state.loading = true;
-            state.data = null
+            state.listLocation = null
             state.error = null;
             return { ...state }
 
-        case actions.GET_WEATHER_FORECAST_SUCCESS:
+        case actions.GET_LOCATION_SUCCESS:
             state.loading = false;
-            state.data = action.payload;
+            state.listLocation = action.payload;
             state.error = null;
             return { ...state }
 
-        case actions.GET_WEATHER_FORECAST_FAIL:
+        case actions.GET_LOCATION_FAIL:
             state.loading = false;
-            state.data = null;
+            state.listLocation = null;
             state.error = action.payload;
             return { ...state }
 
@@ -33,4 +33,4 @@ const weatherForecast = (state = initialState, action) => {
     }
 };
 
-export default weatherForecast;
+export default locationReducer;
