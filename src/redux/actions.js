@@ -4,7 +4,7 @@ import * as actions from './types'
 const aqi = "no"
 const forecastEndpoint = (param) => `${api}/forecast.json?key=${key}&q=${param}&aqi=${aqi}`
 const locationEndpoint = (param) => `${api}/search.json?key=${key}&q=${param}&aqi=${aqi}`
-
+const locationForecastEndpoint = (param) => `${api}/current.json?key=${key}&q=${param}&aqi=${aqi}`
 
 
 export const getCurrentLocationWeather = (param) => {
@@ -33,7 +33,6 @@ export const actSearch = (input) => {
         dispatch(actSearchRequest)
         api.get(locationEndpoint(input))
             .then((result) => {
-                console.log(result);
                 if (result.status === 200) {
                     dispatch(actSearchSuccess(result.data))
                 }
@@ -52,21 +51,22 @@ const actSearchSuccess = (data) => ({ type: actions.GET_LOCATION_SUCCESS, payloa
 
 export const actLocationForecast = (param) => {
     return (dispatch) => {
-        dispatch(actLocationForecastRequest)
 
-        api.get(forecastEndpoint(param))
+        api.get(locationForecastEndpoint(param))
             .then((result) => {
+                console.log(result);
                 if (result.status === 200) {
-                    dispatch(actLocationForecastSuccess(result.data))
+                    // dispatch(actLocationForecastSuccess(result.data))
                 }
             })
             .catch((error) => {
                 const { message } = error.response?.data.error
-                dispatch(actLocationForecastFail(message))
+                console.log(error);
+                // dispatch(actLocationForecastFail(message))
             })
     }
 }
 
-const actLocationForecastRequest = () => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_REQUEST })
-const actLocationForecastSuccess = (data) => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_SUCCESS, payload: data })
-const actLocationForecastFail = (error) => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_FAIL, payload: error })
+// const actLocationForecastRequest = () => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_REQUEST })
+// const actLocationForecastSuccess = (data) => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_SUCCESS, payload: data })
+// const actLocationForecastFail = (error) => ({ type: actions.GET_CURRENT_LOCATION_WEATHER_FAIL, payload: error })

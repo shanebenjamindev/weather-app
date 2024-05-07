@@ -15,7 +15,7 @@ export default function Home() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getCurrentLocationWeather(location ? location : "ho chi minh"));
+        dispatch(getCurrentLocationWeather(location.length !== 0 ? location : "ho chi minh"));
     }, [location]);
 
     const handleOnChange = (e) => {
@@ -82,7 +82,7 @@ export default function Home() {
                         <LocationDetail data={data} />
                     </>
                 ) : (
-                    <FileLoading />
+                    null
                 )}
             </div>
         </div>

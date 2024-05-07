@@ -1,0 +1,15 @@
+.daily-overflow {
+    overflow-x: scroll;
+}
+
+.daily-overflow::-webkit-scrollbar {
+    width: 1em;
+}
+
+.daily-overflow::-webkit-scrollbar-track {
+    border: 1px solid var(--fade-theme);
+}
+
+.daily-overflow::-webkit-scrollbar-thumb {
+    background-color: var(--light);
+}
