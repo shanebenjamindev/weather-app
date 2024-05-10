@@ -17,7 +17,7 @@ export const searchWeatherData = createAsyncThunk(
     async (cityName, { rejectWithValue }) => {
         try {
             const response = await axios.get(locationEndpoint(cityName));
-            return response.data;
+            return response?.data
         } catch (error) {
             return rejectWithValue(error.response.data);
         }

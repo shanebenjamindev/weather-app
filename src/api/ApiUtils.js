@@ -1,9 +1,10 @@
 import axios from "axios";
-export const key = "9c4633d4bd204cb58b430848240405"
-export const baseURL = "https://api.weatherapi.com/v1/"
+
+export const baseUrl = process.env.REACT_APP_BASE_URL;
+export const key = process.env.REACT_APP_API_KEY;
 
 export const api = axios.create({
-    baseURL: "https://api.weatherapi.com/v1",
+    baseURL: baseUrl
 })
 
 api.interceptors.request.use((config) => {
