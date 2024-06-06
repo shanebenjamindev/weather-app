@@ -2,16 +2,15 @@ export const WeatherImage = {
     'Partly': require("../assets/images/partlycloudy.png"),
     'Partly cloudy': require("../assets/images/partlycloudy.png"),
     'Partly Cloudy': require("../assets/images/partlycloudy.png"),
-    
+
     'Clear': require("../assets/clear.png"),
     'Cloudy': require("../assets/cloud.png"),
     'Overcast': require("../assets/cloud.png"),
-    
+
     'Empty star': require("../assets/images/emptyStar.png"),
     'Full star': require("../assets/images/fullStar.png"),
-    
+
     'Line': require("../assets/images/line.png"),
-    'Fog': require("../assets/images/mist.png"),
     'Mist': require("../assets/images/mist.png"),
 
     'Heavy rain': require("../assets/images/heavyrain.png"),
