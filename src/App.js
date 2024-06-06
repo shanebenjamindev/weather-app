@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import './App.css';
 
@@ -16,6 +17,18 @@ function App() {
         </Routes>
       </BrowserRouter>
     </Suspense>
+=======
+import { useSelector } from 'react-redux';
+import './App.css';
+import WeatherSearch from './components/WeatherSearch';
+
+function App() {
+
+  return (
+    <div>
+      <WeatherSearch />
+    </div>
+>>>>>>> 57e407c0a856136c5ff4cdffd32795582e3893fd
   );
 }
 

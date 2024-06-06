@@ -1,0 +1,12 @@
+.search-container {
+    padding: 10px;
+}
+
+.search-input {
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.home {
+    background-color: var(--primary-theme);
+}
