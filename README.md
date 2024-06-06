@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,21 +73,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 # weather-app
 =======
 # Weather App
+=======
+This project was bootstrapped with [Create React App].
+>>>>>>> parent of 57e407c (push final project)
 
-This is a simple weather application built with ReactJS. It allows users to search for weather information for different cities.
+## Available Scripts
 
-## Table of Contents
+After clone you can run
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Set Up Environment Variables](#set-up-environment-variables)
-- [Running the Project](#running-the-project)
-- [Built With](#built-with)
-- [Authors](#authors)
+### `npm install` 
+or 
+### `npm i`
 
-## Getting Started
+In the project directory, you can run:
 
+<<<<<<< HEAD
 Follow these instructions to get a copy of the project up and running on your local machine.
 
 ### Prerequisites
@@ -130,3 +131,7 @@ The application will be served at `http://localhost:3000` by default.
 
 - Vo Giang
 >>>>>>> 57e407c0a856136c5ff4cdffd32795582e3893fd
+=======
+### `npm start`
+# weather-app
+>>>>>>> parent of 57e407c (push final project)
