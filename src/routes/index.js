@@ -10,8 +10,12 @@ const routes = [
                 path: "",
                 element: lazy(() => import("../pages/Home/Home")),
             },
+            {
+                path: "/search/:location",
+                element: lazy(() => import("../pages/Search")),
+            },
 
-        ]
+    ]
     },
 ]
 

@@ -4,12 +4,15 @@
 
 .daily-overflow::-webkit-scrollbar {
     width: 1em;
+    height: 0.3em;
 }
 
 .daily-overflow::-webkit-scrollbar-track {
     border: 1px solid var(--fade-theme);
+    border-radius: 14px;
 }
 
 .daily-overflow::-webkit-scrollbar-thumb {
+    border-radius: 14px;
     background-color: var(--light);
 }
