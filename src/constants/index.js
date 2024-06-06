@@ -1,6 +1,7 @@
 export const WeatherImage = {
     'Partly': require("../assets/images/partlycloudy.png"),
     'Partly cloudy': require("../assets/images/partlycloudy.png"),
+
     'Partly Cloudy': require("../assets/images/partlycloudy.png"),
 
     'Clear': require("../assets/clear.png"),
